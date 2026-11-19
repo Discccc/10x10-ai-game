@@ -113,20 +113,24 @@ SYSTEM_PROMPT = """
 
 
 
-def build_messages(observation:str)->list[dict[str,str]]:
-    messages=[
+def build_messages(observation:str,
+                   error_feedback:str|None=None)->list[dict[str,str]]:
+   messages=[
         {
             "role":"system",
             "content":SYSTEM_PROMPT
         }
     ]
-
-    messages.append(
+   user_messages=observation
+   if error_feedback is not None:
+      user_messages+="\n\n【上次动作失败信息】\n"
+      user_messages+=error_feedback
+   messages.append(
         {
             "role":"user",
-            "content":observation
+            "content":user_messages
         }
     )
 
 
-    return messages
+   return messages
