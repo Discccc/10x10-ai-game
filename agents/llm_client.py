@@ -25,11 +25,21 @@ class LLMClient:
 
 
 
-    def chat(self,messages):
+    def chat(self,
+             messages,
+             tools=None,
+             tool_choice=None
+             ):
         response=self.client.chat.completions.create(
             messages=messages,
             model=self.model,
-            timeout=self.timeout
+            timeout=self.timeout,
+            tools=tools,
+             extra_body={
+            "thinking": {"type": "disabled"}
+            },
+            tool_choice=tool_choice
+
         )
         return response
 
