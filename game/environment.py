@@ -184,6 +184,20 @@ class GameEnvironment:
         return self.get_state_snapshot()
 
 
+    def get_legal_actions(self,state:GameState):
+        legel_actions=[]
+        for row in range(0,10):
+            for col in range (0,10):
+                for index,piece in enumerate(state.available_pieces):
+                    if piece is None:
+                        continue
+                    if state.board.can_place(piece, row,col):
+                        legel_actions.append((index,row,col))
+
+        return legel_actions
+
+
+
 
 
 if __name__ == "__main__":
