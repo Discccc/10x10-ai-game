@@ -1,7 +1,7 @@
 
 from game.environment import GameEnvironment
 from agents.q_learning.linear_q_agent import LinearQAgent
-from training.linear_q_trainer import LinearQTrainer
+from agents.q_learning.linear_q_trainer import LinearQTrainer
 from experiments.logger import ExperimentLogger
 
 
