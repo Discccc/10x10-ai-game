@@ -5,3 +5,12 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# Frontend build & dependencies
+frontend/node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
+
+# Local large acceptance video assets (kept locally, not tracked in Git)
+docs/acceptance/**/*.webm
+docs/acceptance/**/*.mp4

@@ -123,10 +123,13 @@ class LinearQAgent:
     def calculate_td_error(self,current_q,td_target):
        return td_target-current_q
 
-
     def update_weights(self,features,td_error):
-        self.weights+=self.learning_rate*td_error*features
+        new_weights=self.weights+self.learning_rate*td_error*features
 
+        if not np.isfinite(new_weights).all():
+            raise FloatingPointError("权重出现异常")
+
+        self.weights=new_weights
 
     def learn(self,
               state,

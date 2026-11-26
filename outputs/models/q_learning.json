@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "feature_names": [
+    "bias",
+    "piece_size",
+    "cleared_lines",
+    "board_occupancy",
+    "near_full_rows",
+    "near_full_cols"
+  ],
+  "weights": [
+    352.9619725186928,
+    13.24529748159156,
+    730.5092715265574,
+    -209.06335116560007,
+    198.5788290976838,
+    -483.67020688280815
+  ],
+  "agent_params": {
+    "epsilon_start": 1.0,
+    "epsilon_min": 0.01,
+    "epsilon_decay_steps": 10000,
+    "gamma": 0.95,
+    "learning_rate": 0.01
+  },
+  "training_progress": {
+    "total_steps": 459446,
+    "total_episodes": 10000
+  }
+}
